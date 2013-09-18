@@ -126,7 +126,7 @@
     } else if (firstTappedView != tappedCard) {
         isAnimating = YES;
         
-        [UIView transitionWithView:tappedCard duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+        [UIView transitionWithView:tappedCard duration:0.5 options:UIViewAnimationOptionTransitionCurlDown animations:^{
             [tappedCard flipCard];
         } completion:nil];
         

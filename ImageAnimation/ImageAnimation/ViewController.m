@@ -28,11 +28,18 @@
         fileName = [NSString stringWithFormat:@"Clock%i.png", i];
         [imageArray addObject:[UIImage imageNamed:fileName]];
     }
+        
+    [imageArray addObject:[UIImage imageNamed:@"Clock1.png"]];
+    for (int i = 10; i > 1; i--) {
+        fileName = [NSString stringWithFormat:@"Clock%i.png", i];
+        [imageArray addObject:[UIImage imageNamed:fileName]];
+    }
     
     // Configure animations
     animatedImages.animationImages = imageArray;
-    animatedImages.animationDuration = 1;
-
+    animatedImages.animationDuration = 1.0;
+//    animatedImages.animationRepeatCount = 1;
+    
     [animatedImages startAnimating];
 
 
