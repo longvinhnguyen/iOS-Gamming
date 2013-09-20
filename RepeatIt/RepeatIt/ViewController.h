@@ -27,6 +27,8 @@
     AVAudioPlayer *audioPlayer1;
     AVAudioPlayer *audioPlayer2;
     AVAudioPlayer *audioPlayer3;
+    
+    int buttonCounter;
 }
 
 - (void) loadImages;

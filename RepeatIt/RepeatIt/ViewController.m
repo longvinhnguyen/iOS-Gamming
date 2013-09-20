@@ -11,7 +11,7 @@
 #define IMAGE_SIZE  140
 #define SPACING     10
 
-@interface ViewController ()
+@interface ViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -110,7 +110,9 @@
 - (void)playSequence
 {
     // reset the button counter
-    int buttonCounter = 0;
+    buttonCounter = 0;
+    
+    playingSequence = YES;
     
     // Play the first button
     [self playButton:[[sequence objectAtIndex:buttonCounter] intValue]];
@@ -149,6 +151,87 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // User needs to repeat the sequence
+    
+    if (!playingSequence && buttonCounter < [sequence count]) {
+        UITouch *touch = [touches anyObject];
+        
+        if ([touch.view class] == [UIImageView class]) {
+            UIImageView *tappedView = (UIImageView *)touch.view;
+            
+            [self playButton:tappedView.tag];
+            
+            int correctButton = [[sequence objectAtIndex:buttonCounter] intValue];
+            
+            if (tappedView.tag == correctButton) {
+                buttonCounter ++;
+                
+                if ([sequence count] == buttonCounter) {
+                    [self performSelector:@selector(playerFinished) withObject:nil afterDelay:2.0f];
+                }
+            } else {
+                [self endGameWithMessage:@"You missed"];
+            }
+        }
+    }
+}
+
+- (void)playerFinished
+{
+    [self addToSequence];
+    
+    [self playSequence];
+}
+
+- (void)endGameWithMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Over" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alert.delegate = self;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [sequence removeAllObjects];
+    buttonCounter = 0;
+    [self addToSequence];
+    
+    [self playSequence];
+}
+
+
+
+#pragma mark - Audio Player delegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)completed
+{
+    if (completed) {
+        //
+        
+        NSString *urlString = [player.url lastPathComponent];
+        if ([urlString isEqualToString:@"0.aiff"]) {
+            image0.highlighted = NO;
+        } else if ([urlString isEqualToString:@"1.aiff"]) {
+            image1.highlighted = NO;
+        } else if ([urlString isEqualToString:@"2.aiff"]) {
+            image2.highlighted = NO;
+        } else if ([urlString isEqualToString:@"3.aiff"]) {
+            image3.highlighted = NO;
+        }
+        
+        if (playingSequence) {
+            // Increment the button counter and see if we are finished
+            if (++buttonCounter<[sequence count]) {
+                [self playButton:[[sequence objectAtIndex:buttonCounter] intValue]];
+            }  else {
+                buttonCounter = 0;
+                playingSequence = NO;
+            }
+        }
+    }
 }
 
 
