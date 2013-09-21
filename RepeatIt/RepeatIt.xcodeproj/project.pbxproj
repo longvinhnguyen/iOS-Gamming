@@ -328,10 +328,12 @@
 		41A5D5D117EA032E009B7419 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Lipscomb (EGDHMM643Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RepeatIt/RepeatIt-Prefix.pch";
 				INFOPLIST_FILE = "RepeatIt/RepeatIt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8B5373C0-02FF-48A1-8BAC-2E615F6190AB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -339,10 +341,12 @@
 		41A5D5D217EA032E009B7419 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Lipscomb (EGDHMM643Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RepeatIt/RepeatIt-Prefix.pch";
 				INFOPLIST_FILE = "RepeatIt/RepeatIt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8B5373C0-02FF-48A1-8BAC-2E615F6190AB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -366,6 +370,7 @@
 				41A5D5D217EA032E009B7419 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
