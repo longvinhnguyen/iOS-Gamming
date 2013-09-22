@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GameState : NSObject
+typedef enum {
+    TTxPlayerTurn = 1,
+    TToPlayerTurn = 2
+}TTPlayerTurn;
+
+@interface GameState : NSObject<NSCoding>
+{
+    TTPlayerTurn playersTurn;
+    NSMutableArray *boardState;
+}
+
+@property (nonatomic, assign) TTPlayerTurn playersTurn;
+@property (nonatomic, strong) NSMutableArray *boardState;
 
 @end

@@ -18,6 +18,11 @@
 		4152862917ED88D000813B2B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4152862817ED88D000813B2B /* Default-568h@2x.png */; };
 		4152862C17ED88D000813B2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4152862B17ED88D000813B2B /* ViewController.m */; };
 		4152862F17ED88D000813B2B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4152862D17ED88D000813B2B /* ViewController.xib */; };
+		4152863917ED890B00813B2B /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4152863617ED890B00813B2B /* Background.png */; };
+		4152863A17ED890B00813B2B /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 4152863717ED890B00813B2B /* o.png */; };
+		4152863B17ED890B00813B2B /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4152863817ED890B00813B2B /* x.png */; };
+		4152863E17ED8BFA00813B2B /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4152863D17ED8BFA00813B2B /* GameState.m */; };
+		4152864017ED9CDE00813B2B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4152863F17ED9CDE00813B2B /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,12 @@
 		4152862A17ED88D000813B2B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4152862B17ED88D000813B2B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4152862E17ED88D000813B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		4152863617ED890B00813B2B /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		4152863717ED890B00813B2B /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
+		4152863817ED890B00813B2B /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
+		4152863C17ED8BFA00813B2B /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		4152863D17ED8BFA00813B2B /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
+		4152863F17ED9CDE00813B2B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4152864017ED9CDE00813B2B /* GameKit.framework in Frameworks */,
 				4152861317ED88D000813B2B /* UIKit.framework in Frameworks */,
 				4152861517ED88D000813B2B /* Foundation.framework in Frameworks */,
 				4152861717ED88D000813B2B /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +85,7 @@
 		4152861117ED88D000813B2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4152863F17ED9CDE00813B2B /* GameKit.framework */,
 				4152861217ED88D000813B2B /* UIKit.framework */,
 				4152861417ED88D000813B2B /* Foundation.framework */,
 				4152861617ED88D000813B2B /* CoreGraphics.framework */,
@@ -83,12 +96,15 @@
 		4152861817ED88D000813B2B /* TicTac */ = {
 			isa = PBXGroup;
 			children = (
+				4152863517ED890B00813B2B /* Images */,
 				4152862117ED88D000813B2B /* AppDelegate.h */,
 				4152862217ED88D000813B2B /* AppDelegate.m */,
 				4152862A17ED88D000813B2B /* ViewController.h */,
 				4152862B17ED88D000813B2B /* ViewController.m */,
 				4152862D17ED88D000813B2B /* ViewController.xib */,
 				4152861917ED88D000813B2B /* Supporting Files */,
+				4152863C17ED8BFA00813B2B /* GameState.h */,
+				4152863D17ED8BFA00813B2B /* GameState.m */,
 			);
 			path = TicTac;
 			sourceTree = "<group>";
@@ -105,6 +121,16 @@
 				4152862817ED88D000813B2B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4152863517ED890B00813B2B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4152863617ED890B00813B2B /* Background.png */,
+				4152863717ED890B00813B2B /* o.png */,
+				4152863817ED890B00813B2B /* x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +189,9 @@
 				4152862717ED88D000813B2B /* Default@2x.png in Resources */,
 				4152862917ED88D000813B2B /* Default-568h@2x.png in Resources */,
 				4152862F17ED88D000813B2B /* ViewController.xib in Resources */,
+				4152863917ED890B00813B2B /* Background.png in Resources */,
+				4152863A17ED890B00813B2B /* o.png in Resources */,
+				4152863B17ED890B00813B2B /* x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +205,7 @@
 				4152861F17ED88D000813B2B /* main.m in Sources */,
 				4152862317ED88D000813B2B /* AppDelegate.m in Sources */,
 				4152862C17ED88D000813B2B /* ViewController.m in Sources */,
+				4152863E17ED8BFA00813B2B /* GameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +293,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TicTac/TicTac-Prefix.pch";
 				INFOPLIST_FILE = "TicTac/TicTac-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,6 +305,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TicTac/TicTac-Prefix.pch";
 				INFOPLIST_FILE = "TicTac/TicTac-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,6 +330,7 @@
 				4152863417ED88D000813B2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
